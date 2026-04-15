@@ -3,28 +3,55 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
+mas_installed_apps:
+  - { id: 443987910, name: "1Password" }
+  - { id: 497799835, name: "Xcode" }
+  - { id: 937984704, name: "Amphetamine"}
+  - { id: 425424353, name: "The Unarchiver"}
+  - { id: 441258766, name: "Magnet"}
+  - { id: 1540160809, name: "OneTab"}
+  - { id: 1622835804, name: "Kagi for Safari"}
+  - { id: 931571202, name: "QuickShade"}
+
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+configure_dock: true
+dockitems_remove:
+- Apps
+- Mail
+- Maps
+- Photos
+- FaceTime
+- Phone
+- Calendar
+- Contacts
+- Reminders
+- TV
+- Games
+- iPhone Mirroring
+- Launchpad
+- Podcasts
+dockitems_persist:
+- name: "Sublime Text"
+  path: "/Applications/Sublime Text.app/"
+  pos: 5
+- name: "Fantastical"
+  path: "/Applications/Fantastical.app/"
+  pos: 6
+- name: "Signal"
+  path: "/Applications/Signal.app/"
+- name: "Firefox"
+  path: "/Applications/Firefox.app/"
+- name: "iTerm"
+  path: "/Applications/iTerm.app/"
 
-configure_sudoers: false
-sudoers_custom_config: ""
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  na28046 ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/nati0n/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/code/dotfiles
 dotfiles_repo_version: master # Replace with your default branch
 dotfiles_files:
   - .zshrc
@@ -66,7 +93,10 @@ homebrew_taps: []
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
+  - alfred
+  - vivaldi
   - docker
+  - signal
   - dropbox
   - firefox
   - google-chrome
@@ -76,6 +106,30 @@ homebrew_cask_apps:
   - slack
   - sublime-text
   - transmit
+  - 1password
+  - anki
+  - appcleaner
+  - bartender
+  - cool-retro-term
+  - cyberduck
+  - discord
+  - iterm2
+  - ghostty
+  - kitty
+  - orion
+  - transmission
+  - transmit
+  - vmware-fusion
+  - wireshark
+  - vlc
+  - visual-studio-code
+  - typora
+  - keka
+  - soundsource
+  - scroll-reverser
+  - insta360-link-controller
+  - adobe-acrobat-reader
+  - mimestream
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
 mas_installed_apps: []
